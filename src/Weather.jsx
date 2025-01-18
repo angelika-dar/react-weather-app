@@ -19,7 +19,7 @@ export default function Weather({ defaultCity }) {
       humidity: res.data.main.humidity,
       wind: res.data.wind.speed,
       city: res.data.name,
-      iconUrl: `https://openweathermap.org/img/wn/${res.data.weather[0].icon}@2x.png`,
+      icon: res.data.weather[0].icon,
     });
   }
 

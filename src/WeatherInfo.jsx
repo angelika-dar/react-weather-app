@@ -1,4 +1,5 @@
 import FormattedDate from "./FormattedDate";
+import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherInfo({ data }) {
   return (
@@ -14,11 +15,7 @@ export default function WeatherInfo({ data }) {
         <div className="col-6">
           <div className="d-flex">
             <div>
-              <img
-                src={data.iconUrl}
-                alt={data.description}
-                className="float-left"
-              />
+              <WeatherIcon code={data.icon} />
             </div>
             <div>
               <span className="temperature">
