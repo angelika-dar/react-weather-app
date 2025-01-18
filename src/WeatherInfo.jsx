@@ -1,4 +1,5 @@
 import FormattedDate from "./FormattedDate";
+import WeatherTemperature from "./WeatherTemperature";
 import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherInfo({ data }) {
@@ -18,10 +19,7 @@ export default function WeatherInfo({ data }) {
               <WeatherIcon code={data.icon} />
             </div>
             <div>
-              <span className="temperature">
-                {Math.round(data.temperature)}
-              </span>
-              <span className="unit">C°</span>
+              <WeatherTemperature celsius={data.temperature} />
             </div>
           </div>
         </div>
