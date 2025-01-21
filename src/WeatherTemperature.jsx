@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import PropTypes from "prop-types";
 export default function WeatherTemperature({ celsius }) {
   const [unit, setUnit] = useState("celsius");
 
@@ -43,3 +43,8 @@ export default function WeatherTemperature({ celsius }) {
     );
   }
 }
+
+// PropTypes validation
+WeatherTemperature.propTypes = {
+  celsius: PropTypes.number.isRequired,
+};

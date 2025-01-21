@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import FormattedDate from "./FormattedDate";
 import WeatherTemperature from "./WeatherTemperature";
 import WeatherIcon from "./WeatherIcon";
@@ -33,3 +34,16 @@ export default function WeatherInfo({ data }) {
     </div>
   );
 }
+
+// PropTypes validation
+WeatherInfo.propTypes = {
+  data: PropTypes.shape({
+    city: PropTypes.string.isRequired,
+    date: PropTypes.instanceOf(Date).isRequired,
+    description: PropTypes.string.isRequired,
+    temperature: PropTypes.number.isRequired,
+    humidity: PropTypes.number.isRequired,
+    wind: PropTypes.number.isRequired,
+    icon: PropTypes.string.isRequired,
+  }).isRequired,
+};

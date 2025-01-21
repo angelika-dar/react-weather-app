@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
@@ -71,3 +72,8 @@ export default function Weather({ defaultCity }) {
     return "Loading...";
   }
 }
+
+// PropTypes validation
+Weather.propTypes = {
+  defaultCity: PropTypes.string.isRequired,
+};

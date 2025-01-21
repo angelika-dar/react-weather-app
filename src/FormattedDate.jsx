@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 export default function FormattedDate(props) {
   const days = [
     "Sunday",
@@ -26,3 +27,8 @@ export default function FormattedDate(props) {
     </div>
   );
 }
+
+// PropTypes validation
+FormattedDate.propTypes = {
+  date: PropTypes.instanceOf(Date).isRequired,
+};

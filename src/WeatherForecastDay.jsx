@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherForecastDay(props) {
@@ -30,3 +31,17 @@ export default function WeatherForecastDay(props) {
     </div>
   );
 }
+
+// PropTypes validation
+WeatherForecastDay.propTypes = {
+  data: PropTypes.shape({
+    time: PropTypes.number.isRequired,
+    temperature: PropTypes.shape({
+      maximum: PropTypes.number.isRequired,
+      minimum: PropTypes.number.isRequired,
+    }).isRequired,
+    condition: PropTypes.shape({
+      icon: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+};

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import WeatherForecastDay from "./WeatherForecastDay";
 import "./WeatherForecast.css";
 import axios from "axios";
@@ -48,3 +49,11 @@ export default function WeatherForecast({ coordinates }) {
     return null;
   }
 }
+
+// PropTypes validation
+WeatherForecast.propTypes = {
+  coordinates: PropTypes.shape({
+    lon: PropTypes.number.isRequired,
+    lat: PropTypes.number.isRequired,
+  }).isRequired,
+};

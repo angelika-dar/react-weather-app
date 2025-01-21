@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import ReactAnimatedWeather from "react-animated-weather";
 
 export default function WeatherIcon({ code, size }) {
@@ -49,3 +50,9 @@ export default function WeatherIcon({ code, size }) {
     />
   );
 }
+
+// PropTypes validation
+WeatherIcon.propTypes = {
+  code: PropTypes.string.isRequired,
+  size: PropTypes.number.isRequired,
+};
