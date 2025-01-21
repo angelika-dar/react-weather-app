@@ -11,7 +11,6 @@ export default function Weather({ defaultCity }) {
   });
 
   function handleResponse(res) {
-    console.log(res.data);
     setWeatherData({
       ready: true,
       date: new Date(res.data.dt * 1000),
@@ -21,6 +20,7 @@ export default function Weather({ defaultCity }) {
       wind: res.data.wind.speed,
       city: res.data.name,
       icon: res.data.weather[0].icon,
+      coordinates: res.data.coord,
     });
   }
 
@@ -63,7 +63,7 @@ export default function Weather({ defaultCity }) {
           </div>
         </form>
         <WeatherInfo data={weatherData} />
-        <WeatherForecast />
+        <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
